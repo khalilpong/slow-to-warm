@@ -72,13 +72,6 @@ nav a:hover {
     background-color: #005bb5;
 }
 
-/* 主页风景图片 */
-.homepage-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
 /* 作品展示 */
 .gallery {
     display: flex;
