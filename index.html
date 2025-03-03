@@ -1,84 +1,118 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- 头部导航 -->
-    <header>
-        <div class="logo">
-            <img src="images/logo.jpg" alt="Logo" id="logo">
-        </div>
-        <nav>
-            <a href="index.html">首页</a>
-            <a href="about.html">关于我</a>
-            <a href="contact.html">联系方式</a>
-            <a href="docs/resume.pdf" target="_blank">我的简历</a>
-        </nav>
-    </header>
+/* 全局样式 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f8f8f8;
+}
 
-    <!-- 英雄区域（全屏风景图） -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>探索世界，定义未来</h1>
-            <p>欢迎来到我的个人网站，了解我的故事、兴趣与创作。</p>
-            <a href="#about" class="cta-button">了解更多</a>
-        </div>
-    </section>
+/* 头部导航 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-    <!-- 主页风景图片 -->
-    <section class="homepage-image">
-        <img src="images/landscape.jpg" alt="风景图片">
-    </section>
+.logo img {
+    height: 40px;
+}
 
-    <!-- 个人介绍 -->
-    <section id="about">
-        <h2>关于我</h2>
-        <p>嗨！我是王思然，非常高兴你能访问我的网站。在这里我将分享我的兴趣、经历以及我的创作。</p>
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
 
-        <!-- 视频介绍 -->
-        <div class="video-container">
-            <h3>我的视频介绍</h3>
-            <video controls width="100%" height="auto">
-                <source src="videos/introduction.mp4" type="video/mp4">
-                <source src="videos/introduction.webm" type="video/webm">
-                <source src="videos/introduction.ogg" type="video/ogg">
-                您的浏览器不支持 HTML5 视频播放，请尝试使用最新版本的浏览器。
-            </video>
-        </div>
+nav a:hover {
+    color: #0071e3;
+}
 
-        <!-- 个人作品 & 资料 -->
-        <h3>我的作品</h3>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="images/work1.jpg" alt="作品 1">
-                <p>作品 1</p>
-            </div>
-            <div class="gallery-item">
-                <img src="images/work2.jpg" alt="作品 2">
-                <p>作品 2</p>
-            </div>
-            <div class="gallery-item">
-                <img src="images/work3.jpg" alt="作品 3">
-                <p>作品 3</p>
-            </div>
-        </div>
+/* 英雄区域（大背景） */
+.hero {
+    height: 100vh;
+    background: url('images/landscape.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
 
-        <!-- 资料链接 -->
-        <h3>我的资料链接</h3>
-        <ul>
-            <li><a href="docs/resume.pdf" target="_blank">个人简历</a></li>
-            <li><a href="docs/portfolio.pdf" target="_blank">作品集</a></li>
-            <li><a href="https://example.com/my-work" target="_blank">在线作品展示</a></li>
-        </ul>
-    </section>
+.hero-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 30px;
+    border-radius: 10px;
+}
 
-    <!-- 页脚 -->
-    <footer>
-        <p>© 2025 王思然. 保留所有权利。</p>
-    </footer>
-</body>
-</html>
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #0071e3;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #005bb5;
+}
+
+/* 作品展示 */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.gallery-item {
+    max-width: 300px;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* 视频区域 */
+.video-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+video {
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
