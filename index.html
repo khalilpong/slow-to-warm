@@ -3,77 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
+    <title>Slowtowarm | 学习资料库</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500;700&family=Noto+Sans+SC:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 头部导航 -->
-    <header>
-        <div class="logo">
-            <img src="images/logo.jpg" alt="Logo" id="logo">
-        </div>
-        <nav>
-            <a href="index.html">首页</a>
-            <a href="about.html">关于我</a>
-            <a href="contact.html">联系方式</a>
-            <a href="docs/resume.pdf" target="_blank">我的简历</a>
-        </nav>
-    </header>
 
-    <!-- 英雄区域（大背景风景图） -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>探索世界，定义未来</h1>
-            <p>欢迎来到我的个人网站，了解我的故事、兴趣与创作。</p>
-            <a href="#about" class="cta-button">了解更多</a>
-        </div>
-    </section>
-
-    <!-- 个人介绍 -->
-    <section id="about">
-        <h2>关于我</h2>
-        <p>嗨！我是邦德，非常高兴你能访问我的网站。在这里我将分享我的兴趣、经历以及我的创作。</p>
-
-        <!-- 视频介绍 -->
-        <div class="video-container">
-            <h3>我的视频介绍</h3>
-            <video controls width="100%" height="auto">
-                <source src="videos/1.mp4" type="video/mp4">
-                <source src="videos/1.webm" type="video/webm">
-                <source src="videos/1.ogg" type="video/ogg">
-                您的浏览器不支持 HTML5 视频播放，请尝试使用最新版本的浏览器。
-            </video>
-        </div>
-
-        <!-- 个人作品 -->
-        <h3>我的作品</h3>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="images/work1.jpg" alt="作品 1">
-                <p>作品 1</p>
+    <div class="container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-box">
+                    <span class="kanji">温</span> </div>
+                <h1>Slow To Warm</h1>
+                <p class="subtitle">学习资料归档</p>
             </div>
-            <div class="gallery-item">
-                <img src="images/work2.jpg" alt="作品 2">
-                <p>作品 2</p>
-            </div>
-            <div class="gallery-item">
-                <img src="images/work3.jpg" alt="作品 3">
-                <p>作品 3</p>
-            </div>
-        </div>
 
-        <!-- 资料链接 -->
-        <h3>我的资料链接</h3>
-        <ul>
-            <li><a href="docs/resume.pdf" target="_blank">个人简历</a></li>
-            <li><a href="docs/portfolio.pdf" target="_blank">作品集</a></li>
-            <li><a href="https://example.com/my-work" target="_blank">在线作品展示</a></li>
-        </ul>
-    </section>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-term="all">全部资料</button>
+                <div class="nav-divider"></div>
+                <button class="nav-item" data-term="term1-1">大一 · 上学期</button>
+                <button class="nav-item" data-term="term1-2">大一 · 下学期</button>
+                <button class="nav-item" data-term="term2-1">大二 · 上学期</button>
+                <button class="nav-item" data-term="term2-2">大二 · 下学期</button>
+                <button class="nav-item" data-term="term3-1">大三 · 上学期</button>
+                <button class="nav-item" data-term="term3-2">大三 · 下学期</button>
+            </nav>
 
-    <!-- 页脚 -->
-    <footer>
-        <p>© 2025 邦哥哥. 保留所有权利。</p>
-    </footer>
+            <div class="footer-info">
+                <a href="about.html">关于我</a>
+                <p>© 2025 邦哥哥</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="top-bar">
+                <h2 id="current-title">全部资料</h2>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="检索文档...">
+                </div>
+            </header>
+
+            <div class="doc-grid" id="doc-list">
+                <a href="docs/term1-1/math_notes.pdf" target="_blank" class="doc-card" data-category="term1-1">
+                    <div class="card-icon">PDF</div>
+                    <div class="card-info">
+                        <h3>高等数学笔记</h3>
+                        <span class="tag">大一上</span>
+                        <span class="date">2023.10.15</span>
+                    </div>
+                </a>
+
+                <a href="docs/term2-2/circuit_lab.docx" target="_blank" class="doc-card" data-category="term2-2">
+                    <div class="card-icon docx">DOC</div>
+                    <div class="card-info">
+                        <h3>电路实验报告</h3>
+                        <span class="tag">大二下</span>
+                        <span class="date">2024.06.20</span>
+                    </div>
+                </a>
+
+                </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
